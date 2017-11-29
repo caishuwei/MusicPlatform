@@ -1,0 +1,82 @@
+apply plugin: 'com.android.application'
+//apt插件
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+    defaultConfig {
+        applicationId "com.csw.musicplatform"
+        minSdkVersion 14
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+    //v7包
+    compile 'com.android.support:appcompat-v7:26.0.0'
+    //注解支持包 @NOTNULL等
+    compile 'com.android.support:support-annotations:26.0.0'
+    //材料设计支持包
+    compile 'com.android.support:design:26.0.0'
+    //json解析框架
+    //    compile 'com.google.code.gson:gson:2.2.4'
+
+    //图片加载框架
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    //eventbus 事件总线框架，用于解耦，类似于广播，应该不能跨进程
+    compile 'org.greenrobot:eventbus:3.0.0'
+
+    //方法数超过一个包的极限进行分包，支持包用于兼容低版本
+    compile 'com.android.support:multidex:1.0.1'
+
+    //第三方封装的RecyclerView适配器
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+
+    //   retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    //  retrofit gson解析
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    //retrofit 字符串解析依赖
+    compile 'com.squareup.retrofit2:converter-scalars:2.3.0'
+    //支持rxjava的 observer 回调
+//    compile 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+    //用于让retrofit2支持RxJava2的回调,md
+    compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    //RxJava
+    compile 'io.reactivex.rxjava2:rxjava:2.1.5'
+    //RxAndroid的依赖包
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    //okhttp 3 日志拦截器
+    compile 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    // 线程切换的时候用到的 线程调度 AndroidSchedulers.mainThread()
+    compile 'io.reactivex:rxandroid:1.0.1'
+
+    //butterknife
+    compile 'com.jakewharton:butterknife:8.1.0'
+    apt 'com.jakewharton:butterknife-compiler:8.1.0'
+
+    // dagger2
+    apt 'com.google.dagger:dagger-compiler:2.12'
+    compile 'com.google.dagger:dagger:2.12'
+    provided 'javax.annotation:jsr250-api:1.0'
+
+    //photoview
+    compile 'com.github.chrisbanes:PhotoView:1.2.6'
+
+}

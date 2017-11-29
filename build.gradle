@@ -1,0 +1,31 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        //android 构建插件（gradle）
+        classpath 'com.android.tools.build:gradle:2.3.3'
+        //apt 动态代码生成插件
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        /*一个常用的代码仓库 提供像BaseRecyclerViewAdapterHelper，PhotoView等项目依赖*/
+        maven { url "https://jitpack.io" }
+        /*谷歌依赖仓库 提供各 版本的支持包等等*/
+        maven {
+            url "https://maven.google.com"
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
