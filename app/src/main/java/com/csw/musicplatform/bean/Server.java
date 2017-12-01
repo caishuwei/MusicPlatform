@@ -1,10 +1,12 @@
 package com.csw.musicplatform.bean;
 
+import java.io.Serializable;
+
 /**
  * Created by caisw on 2017/11/30.
  */
 
-public class Server {
+public class Server implements Serializable {
 
     private String name;
     private String address;

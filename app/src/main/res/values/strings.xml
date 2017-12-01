@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">MusicPlatform</string>
+
+    <!--Common-->
+    <string name="Common_cancel">取消</string>
+    <string name="Common_confirm">确定</string>
+    <string name="Common_save">保存</string>
+    <string name="Common_delete">删除</string>
+
+    <!--ServerEditDialog-->
+    <string name="ServerEditDialog_title">编辑服务器信息</string>
+    <string name="ServerEditDialog_name_hint">服务器名称</string>
+    <string name="ServerEditDialog_address_hint">服务器地址</string>
 </resources>
