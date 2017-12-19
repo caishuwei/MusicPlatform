@@ -1,5 +1,7 @@
 package com.csw.musicplatform.di.module;
 
+import com.csw.musicplatform.ui.file_list.FileExplorerContact;
+import com.csw.musicplatform.ui.file_list.FileExplorerPresenter;
 import com.csw.musicplatform.ui.main.MainContact;
 import com.csw.musicplatform.ui.main.MainPresenter;
 
@@ -17,5 +19,9 @@ public class PresenterModule {
         return presenter;
     }
 
+    @Provides
+    public FileExplorerContact.Presenter providerFileExplorerPresenter(FileExplorerPresenter presenter) {
+        return presenter;
+    }
 
 }

@@ -7,6 +7,12 @@
     <string name="Common_save">保存</string>
     <string name="Common_delete">删除</string>
 
+    <!--Hint-->
+    <string name="Hint_socket_time_out">网络连接超时</string>
+    <string name="Hint_network_connect_error">连接不上服务器</string>
+    <string name="Hint_data_parse_exception">数据无法解析</string>
+    <string name="Hint_service_no_run">服务未在该主机运行</string>
+
     <!--ServerEditDialog-->
     <string name="ServerEditDialog_title">编辑服务器信息</string>
     <string name="ServerEditDialog_name_hint">服务器名称</string>

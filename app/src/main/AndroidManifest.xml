@@ -2,6 +2,8 @@
 
     package="com.csw.musicplatform">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".app.MyApplication"
         android:icon="@mipmap/ic_launcher"

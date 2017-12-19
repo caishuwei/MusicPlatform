@@ -39,6 +39,7 @@ public class MainActivity extends BaseActivity implements MainContact.View {
     private android.view.View addView;
     @Inject
     MainContact.Presenter presenter;
+    private FileExplorerFragment currFragment;
 
     public MainActivity() {
         MyApplication.getInstance().getAppComponent().getMainComponentBuilder().setView(this).build().inject(this);
@@ -99,13 +100,14 @@ public class MainActivity extends BaseActivity implements MainContact.View {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, android.view.View view, int position) {
                 Server server = (Server) adapter.getItem(position);
-                ActivityHelper.setFragment(
+                currFragment = ActivityHelper.setFragment(
                         getSupportFragmentManager(),
                         R.id.fl_fragment_container,
                         FileExplorerFragment.class,
                         server.getAddress(),
                         FileExplorerFragment.createBundle(server)
                 );
+                drawerLayout.closeDrawers();
             }
         });
         addView.setOnClickListener(new android.view.View.OnClickListener() {
@@ -141,5 +143,12 @@ public class MainActivity extends BaseActivity implements MainContact.View {
     @Override
     public void updateServerList(List<Server> serverList) {
         serverListAdapter.setNewData(serverList);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(currFragment==null||!currFragment.onPreClick()){
+            super.onBackPressed();
+        }
     }
 }
